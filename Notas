@@ -1,0 +1,41 @@
+import java.io.IOException;
+import java.util.Locale;
+import java.util.Scanner;
+ 
+/**
+ * IMPORTANT: 
+ *      O nome da classe deve ser "Main" para que a sua solução execute
+ *      Class name must be "Main" for your solution to execute
+ *      El nombre de la clase debe ser "Main" para que su solución ejecutar
+ */
+public class Notas {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new  scanner(System.in);
+
+        int valor = scanner.nextInt();
+        system.out.println(valor);
+        int cedulas100 = valor / 100;
+        valor = valor % 100;
+        int cedulas100 = valor / 50;
+        valor = valor % 100;
+        int cedulas100 = valor / 20;
+        valor = valor % 100;
+        int cedulas100 = valor / 10;
+        valor = valor % 100;
+        int cedulas100 = valor / 5;
+        valor = valor % 100;
+        int cedulas100 = valor / 2;
+        valor = valor % 100;
+    
+
+        system.out.println(cedulas100)
+        system.out.println(cedulas50)
+        system.out.println(cedulas20)
+        system.out.println(cedulas10)
+        system.out.println(cedulas5)
+        system.out.println(cedulas2)
+
+    }
+ 
+}
