@@ -14,7 +14,7 @@ public class Média {
         float N4 = scanner.nextFloat();
         float Media = ((N1*2)+(N2*3)+(N3*4)+(N4*1)) / 10;
         
-        System.out.println("Media:" +Media);
+        System.out.printf("Media: %.1f\n", Media);
         if (Media>=7){
             System.out.println("Aluno Aprovado");
         } else if ( Media < 5) {
