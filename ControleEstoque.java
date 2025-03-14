@@ -40,6 +40,7 @@ public class ControleEstoque {
             System.out.println("\n=== MENU DE CONTROLE DE ESTOQUE ===");
             System.out.println(" ");
             System.out.println("Cadastrar Produto");
+            System.out.println(" Remover Produto");
             System.out.println("Consultar Estoque");
             System.out.println("Registrar Venda");
             System.out.println("Sair");
@@ -47,22 +48,65 @@ public class ControleEstoque {
         }
       
 
-        private static void cadastrarProduto(Scanner scanner) {
-            System.out.println("Nome do Produto");
-            String nomesProdutos = scanner.nextLine();
-    
-            System.out.println("Preço do Produto");
-            double nomesProdutos = scanner.nextDouble();
-    
-            System.out.println("Quantidade do Produto");
-            int quantidadesProdutos= scanner.nextInt();
+        // Cadastrar um novo produto
+    private static void cadastrarProduto() {
+        if (totalProdutos < nomesProdutos.length) { // Verifica se ainda há espaço no array
+            System.out.print("Nome do Produto: ");
+            nomesProdutos[totalProdutos] = scanner.nextLine();
+
+            System.out.print("Preço do Produto: ");
+            precosProdutos[totalProdutos] = scanner.nextDouble();
+
+            System.out.print("Quantidade do Produto: ");
+            quantidadesProdutos[totalProdutos] = scanner.nextInt();
+            scanner.nextLine(); // Limpa o buffer
+
+            totalProdutos++; // Atualiza a contagem de produtos cadastrados
+            System.out.println("Produto cadastrado com sucesso!");
+        } else {
+            System.out.println("Estoque cheio! Não é possível cadastrar mais produtos.");
+        }
+    }
+
+     // Consultar todos os produtos cadastrados no estoque
+     private static void consultarEstoque() {
+        if (totalProdutos == 0) {
+            System.out.println("O estoque está vazio.");
+        } else {
+            System.out.println("\n=== ESTOQUE ATUAL ===");
+            for (int i = 0; i < totalProdutos; i++) {
+                System.out.println((i + 1) + ". " + nomesProdutos[i] + " | Preço: R$" + precosProdutos[i] + " | Quantidade: " + quantidadesProdutos[i]);
+            }
+        }
+    }
+
+    // Registrar uma venda e atualizar o estoque
+    private static void registrarVenda() {
+        System.out.print("Nome do produto vendido: ");
+        String nomeProduto = scanner.nextLine();
+
+        int indiceProduto = -1;
+        for (int i = 0; i < totalProdutos; i++) {
+            if (nomesProdutos[i].equalsIgnoreCase(nomeProduto)) {
+                indiceProduto = i;
+                break;
+            }
         }
 
+        if (indiceProduto == -1) {
+            System.out.println("Produto não encontrado no estoque.");
+            return;
+        }
 
-        private static void consultarEstoque() {}
+        System.out.print("Quantidade vendida: ");
+        int quantidadeVendida = scanner.nextInt();
+        scanner.nextLine(); // Limpa o buffer
 
-
-        private static void registrarVenda(Scanner scanner) {}
-
-
-        } 
+        if (quantidadeVendida > quantidadesProdutos[indiceProduto]) {
+            System.out.println("Erro! Quantidade insuficiente no estoque.");
+        } else {
+            quantidadesProdutos[indiceProduto] -= quantidadeVendida;
+            System.out.println("Venda registrada com sucesso!");
+        }
+    }
+}
