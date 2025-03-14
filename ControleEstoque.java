@@ -9,12 +9,40 @@ public class ControleEstoque {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        int opcao;
+        
+        do {
+            exibirMenu();
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine(); // Limpa o buffer
+
+            switch (opcao) {
+                case 1:
+                    cadastrarProduto();
+                    break;
+                case 2:
+                    consultarEstoque();
+                    break;
+                case 3:
+                    registrarVenda();
+                    break;
+                case 4:
+                    System.out.println("Saindo do sistema...");
+                    break;
+                default:
+                    System.out.println("Opção inválida! Tente novamente.");
+            }
+        } while (opcao != 4);
+    }
+
         private static void exibirMenu() {
+            System.out.println("\n=== MENU DE CONTROLE DE ESTOQUE ===");
+            System.out.println(" ");
             System.out.println("Cadastrar Produto");
-            System.out.println("Remover Produto");
             System.out.println("Consultar Estoque");
             System.out.println("Registrar Venda");
-            System.out.println("");
+            System.out.println("Sair");
 
         }
       
@@ -27,7 +55,7 @@ public class ControleEstoque {
             double nomesProdutos = scanner.nextDouble();
     
             System.out.println("Quantidade do Produto");
-            int nomesProdutos = scanner.nextInt();
+            int quantidadesProdutos= scanner.nextInt();
         }
 
 
@@ -37,4 +65,4 @@ public class ControleEstoque {
         private static void registrarVenda(Scanner scanner) {}
 
 
-        }
+        } 
