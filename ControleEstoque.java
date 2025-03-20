@@ -10,7 +10,7 @@ public class ControleEstoque {
 
     public static void main(String[] args) {
         int opcao;
-        
+
         do {
             exibirMenu();
             System.out.print("Escolha uma opção: ");
@@ -36,19 +36,19 @@ public class ControleEstoque {
         } while (opcao != 4);
     }
 
-        private static void exibirMenu() {
-            System.out.println("\n=== MENU DE CONTROLE DE ESTOQUE ===");
-            System.out.println(" ");
-            System.out.println("Cadastrar Produto");
-            System.out.println(" Remover Produto");
-            System.out.println("Consultar Estoque");
-            System.out.println("Registrar Venda");
-            System.out.println("Sair");
+    private static void exibirMenu() {
+        System.out.println("\n=== MENU DE CONTROLE DE ESTOQUE ===");
+        System.out.println(" ");
+        System.out.println("1.Cadastrar Produto");
+        System.out.println("2.Consultar Produto");
+        System.out.println("3.Registrar Venda");
+        System.out.println("5.Sair");
 
-        }
-      
 
-        // Cadastrar um novo produto
+    }
+
+
+    // Cadastrar um novo produto
     private static void cadastrarProduto() {
         if (totalProdutos < nomesProdutos.length) { // Verifica se ainda há espaço no array
             System.out.print("Nome do Produto: ");
@@ -68,8 +68,8 @@ public class ControleEstoque {
         }
     }
 
-     // Consultar todos os produtos cadastrados no estoque
-     private static void consultarEstoque() {
+    // Consultar todos os produtos cadastrados no estoque
+    private static void consultarEstoque() {
         if (totalProdutos == 0) {
             System.out.println("O estoque está vazio.");
         } else {
