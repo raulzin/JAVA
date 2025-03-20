@@ -7,12 +7,21 @@ public class Média {
         Locale.setDefault(Locale.US);
         Scanner scanner = new  Scanner(System.in);
 
-
+        System.out.println("Digite a primeira nota");
         float N1 = scanner.nextFloat();
+
+        System.out.println("Digite a segunda nota");
         float N2 = scanner.nextFloat();
+
+        System.out.println("Digite a terceira nota");
         float N3 = scanner.nextFloat();
+
+        System.out.println("Digite a quarta nota");
         float N4 = scanner.nextFloat();
+
         float Media = ((N1*2)+(N2*3)+(N3*4)+(N4*1)) / 10;
+
+    
         
         System.out.println("Media:" +Media);
         if (Media>=7){
