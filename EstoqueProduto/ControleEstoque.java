@@ -1,3 +1,4 @@
+package EstoqueProduto;
 import java.util.Scanner;
 
 public class ControleEstoque {
